@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Timetable Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+    </head>
+    <body class="d-flex h-100 text-center text-bg-secondary">
+    
+</head>
+
+<body>
+    <div class="selection-form form-label">
+        <h2>Select Subjects and Time Slots</h2>
+        <div class="selection-row">
+            <div class="selection-cell">
+                <label for="subject1">Subject 1:</label>
+                <select id="subject1" class="subject-slot-select">
+                    <option value="Rl">Rl</option>
+                    <option value="Dscc">Dscc</option>
+                    <option value="Uav">Uav</option>
+                    <option value="Cs">Cs</option>
+                </select>
+            </div>
+            <div class="selection-cell">
+                <label for="subject2">Subject 2:</label>
+                <select id="subject2" class="subject-slot-select">
+                    <option value="Rl">Rl</option>
+                    <option value="Dscc">Dscc</option>
+                    <option value="Uav">Uav</option>
+                    <option value="Cs">Cs</option>
+                </select>
+            </div>
+            <div class="selection-cell">
+                <label for="subject3">Subject 3:</label>
+                <select id="subject3" class="subject-slot-select">
+                    <option value="Rl">Rl</option>
+                    <option value="Dscc">Dscc</option>
+                    <option value="Uav">Uav</option>
+                    <option value="Cs">Cs</option>
+                </select>
+            </div>
+        </div>
+        <div class="selection-row">
+            <div class="selection-cell">
+                <label for="time1">Time Slot 1:</label>
+                <select id="time1" class="time-slot-select">
+                    <option value="9-10">9-10</option>
+                    <option value="10-11">10-11</option>
+                    <option value="11-12">11-12</option>
+                    <option value="12-1">12-1</option>
+                    <option value="1-2">1-2</option>
+                    <option value="2-3">2-3</option>
+                    <option value="3-4">3-4</option>
+                    <option value="4-5">4-5</option>
+                    <option value="5-6">5-6</option>
+
+                </select>
+            </div>
+            <div class="selection-cell">
+                <label for="time2">Time Slot 2:</label>
+                <select id="time2" class="time-slot-select">
+                    <!-- Add your time slot options here -->
+                    <option value="9-10">9-10</option>
+                    <option value="10-11">10-11</option>
+                    <option value="11-12">11-12</option>
+                    <option value="12-1">12-1</option>
+                    <option value="1-2">1-2</option>
+                    <option value="2-3">2-3</option>
+                    <option value="3-4">3-4</option>
+                    <option value="4-5">4-5</option>
+                    <option value="5-6">5-6</option>
+                </select>
+            </div>
+            <div class="selection-cell">
+                <label for="time3">Time Slot 3:</label>
+                <select id="time3" class="time-slot-select">
+                    <!-- Add your time slot options here -->
+                    <option value="9-10">9-10</option>
+                    <option value="10-11">10-11</option>
+                    <option value="11-12">11-12</option>
+                    <option value="12-1">12-1</option>
+                    <option value="1-2">1-2</option>
+                    <option value="2-3">2-3</option>
+                    <option value="3-4">3-4</option>
+                    <option value="4-5">4-5</option>
+                    <option value="5-6">5-6</option>
+                </select>
+            </div>
+        </div>
+        <button onclick="generateTimetable()">Generate Timetable</button>
+    </div>
+    <div class="timetable-display">
+        <h2>Your Timetable</h2>
+        <div id="timetable-output"></div>
+    </div>
+    <script>
+        const subjectSelectors = [
+    document.getElementById('subject1'),
+    document.getElementById('subject2'),
+    document.getElementById('subject3')
+];
+
+const timeSelectors = [
+    document.getElementById('time1'),
+    document.getElementById('time2'),
+    document.getElementById('time3')
+];
+
+const timetableOutput = document.getElementById('timetable-output');
+
+function generateTimetable() {
+    const selectedSubjects = subjectSelectors.map(selector => selector.value);
+    const selectedTimes = timeSelectors.map(selector => selector.value);
+
+    const timetableHTML = selectedSubjects.map((subject, index) => {
+        return `<div><strong>${selectedTimes[index]}</strong>: ${subject}</div>`;
+    }).join('');
+
+    timetableOutput.innerHTML = timetableHTML;
+}
+    </script>
+</body>
+
+</html>

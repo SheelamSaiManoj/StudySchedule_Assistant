@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.selection-form {
+    margin-bottom: 20px;
+}
+
+.selection-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.selection-cell {
+    margin-right: 20px;
+}
+
+.timetable-display {
+    margin-top: 20px;
+}
